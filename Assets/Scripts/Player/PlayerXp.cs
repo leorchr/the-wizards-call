@@ -7,7 +7,7 @@ public class PlayerXp : MonoBehaviour
     public int currentXp;
     public int maxXp;
     public int level;
-    public int addLevelSpeed;
+    public float addLevelSpeed;
     public int addLevelDamage;
     [SerializeField] private XpBar xpBar;
     [SerializeField] private PlayerHealth playerHealth;
@@ -21,7 +21,7 @@ public class PlayerXp : MonoBehaviour
         xpBar.SetXp(currentXp);
     }
 
-    private void LevelUp()      // augmente le niveau du joueur
+    private void LevelUp()          // augmente le niveau du joueur
     {
         if (currentXp >= maxXp)
         {
@@ -32,10 +32,10 @@ public class PlayerXp : MonoBehaviour
             player.speed += addLevelSpeed;
             player.damage += addLevelDamage;
             xpBar.SetLevel();
-            Instantiate(prefab, transform.localPosition + new Vector3(0, 95, 0), Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
+            Instantiate(prefab, transform.position + new Vector3(Screen.width * 0.5f, Screen.height * 0.5f + 95, 0), Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
             levelUpInfo = prefab.GetComponent<TextMeshProUGUI>();
             levelUpInfo.text = $"Lvl {level} \n+{addLevelSpeed} Speed \n+{addLevelDamage} Damages";
-            Destroy(prefab, 4);
+            //Destroy(prefab);
         }
     }
 }

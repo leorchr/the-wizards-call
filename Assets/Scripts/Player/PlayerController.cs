@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player Statistics")]
     public int damage;                                  // degats qu'inflige le joueur
-    public int speed;                                   // vitesse du joueur
+    public float speed;                                 // vitesse du joueur
 
     [Header("SpeedBoost Competence")]
     [SerializeField] private int speedBoost;            // vitesse du joueur pendant son speedboost
