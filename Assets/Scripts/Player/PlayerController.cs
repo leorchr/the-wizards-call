@@ -22,11 +22,6 @@ public class PlayerController : MonoBehaviour
     public GameObject Pivot;                            // pour l'attaque
     private float angle;                                // variable pour definir l'angle de vue du joueur en fonction de la position de la souris ou du joystick
 
-    private void Update()
-    {
-        CameraMovement();
-    }
-
     public void LookMouse(InputAction.CallbackContext context)          // orientation de la vue du personnage avec la souris
     {
 
@@ -55,11 +50,6 @@ public class PlayerController : MonoBehaviour
         Vector2 inputMovement = value.ReadValue<Vector2>();
         inputMovement.Normalize();
         RB.velocity = new Vector2(speed * inputMovement.x, speed * inputMovement.y);
-    }
-
-    private void CameraMovement()                                       // camera suit le joueur
-    {
-        Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y);
     }
 
     public void Attack(InputAction.CallbackContext value)               // attaque

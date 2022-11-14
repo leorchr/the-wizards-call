@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 public class PlayerXp : MonoBehaviour
 {
@@ -12,15 +13,26 @@ public class PlayerXp : MonoBehaviour
     [SerializeField] private XpBar xpBar;
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private PlayerController player;
+
+    public Canvas statsCanvas;
+    public Vector3 statsOffset;
     [SerializeField] private GameObject prefab;
+    [SerializeField] private GameObject stats;
     private TextMeshProUGUI levelUpInfo;
+
+    private void Start()
+    {
+        stats = Instantiate(prefab, statsCanvas.transform);
+        stats.SetActive(false);
+        levelUpInfo = stats.GetComponent<TextMeshProUGUI>();
+    }
+
     public void AddXp(int xp)       // ajoute de l'xp au joueur
     {
         currentXp += xp;
         LevelUp();
         xpBar.SetXp(currentXp);
     }
-
     private void LevelUp()          // augmente le niveau du joueur
     {
         if (currentXp >= maxXp)
@@ -32,10 +44,20 @@ public class PlayerXp : MonoBehaviour
             player.speed += addLevelSpeed;
             player.damage += addLevelDamage;
             xpBar.SetLevel();
-            Instantiate(prefab, transform.position + new Vector3(Screen.width * 0.5f, Screen.height * 0.5f + 95, 0), Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
-            levelUpInfo = prefab.GetComponent<TextMeshProUGUI>();
-            levelUpInfo.text = $"Lvl {level} \n+{addLevelSpeed} Speed \n+{addLevelDamage} Damages";
-            //Destroy(prefab);
+            DisplayStats();
         }
+    }
+
+    private void DisplayStats()
+    {
+        levelUpInfo.text = $"Lvl {level} \n+{addLevelSpeed} Speed \n+{addLevelDamage} Damages";
+        stats.SetActive(true);
+        stats.transform.localPosition = statsOffset;
+        StartCoroutine(Waiter());
+    }
+    private IEnumerator Waiter()
+    {
+        yield return new WaitForSeconds(3f);
+        stats.SetActive(false);
     }
 }
