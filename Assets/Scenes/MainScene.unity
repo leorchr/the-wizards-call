@@ -362,7 +362,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -673,8 +673,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6902c609456e5da46999afc3efb815ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 2784554390412413089, guid: 5d1a992b6857f7742b2df6903b579b88, type: 3}
-  nbEnemies: 8
+  enemyPrefab1: {fileID: 2784554390412413089, guid: 5d1a992b6857f7742b2df6903b579b88, type: 3}
+  enemyPrefab2: {fileID: 2784554390412413089, guid: 3b7aafcafe299fc40aaa75ba8b8b9af1, type: 3}
+  enemyPrefab3: {fileID: 2784554390412413089, guid: a5883119934934c41886c6bacc263977, type: 3}
+  nbEnemies1: 2
+  nbEnemies2: 2
+  nbEnemies3: 0
   currentEnemies: 0
   limitsX: {x: -8.3, y: 8.3}
   limitsY: {x: -4.5, y: 4.5}
@@ -1137,9 +1141,9 @@ RectTransform:
   m_Father: {fileID: 1894322429}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -700, y: -370}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 260, y: 91}
   m_SizeDelta: {x: 480, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &870239852
@@ -1320,9 +1324,9 @@ RectTransform:
   m_Father: {fileID: 1894322429}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -590, y: -420}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 370, y: 41}
   m_SizeDelta: {x: 700, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1326405173
