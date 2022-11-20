@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int currentHp, maxHp;                                                        // pv et pv max du joueur
-    [SerializeField] private float invincibleDuration;                                  // duree d'invincibilite du joueur
+    public int currentHp, maxHp;
+    [SerializeField] private float invincibleDuration;
     private bool invincible = false;                                                    // si le joueur est en état d'invincibilité
     [SerializeField] private HealthBar healthBar;
     void Start()
@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
             if (invincible == false)
             {
                 currentHp -= collision.gameObject.GetComponent<Enemy>().damage;        // enlève le nombre de degats de l'ennemi aux pv du joueur
-                healthBar.SetHealth();                                        // ajuste la barre de vie
+                healthBar.SetHealth();                                                 // ajuste la barre de vie
                 StartCoroutine(Invulnerability());
                 GameOver();
             }
@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void AddHp()
+    public void AddHp()         // pour augmenter la taille maximale de la barre d'HP
     {
         maxHp += 10;
         currentHp = maxHp;

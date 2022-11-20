@@ -8,21 +8,21 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Statistics")]
-    public int damage;                                  // degats qu'inflige le joueur
-    public float speed;                                 // vitesse du joueur
+    public int damage;
+    public float speed;
 
     [Header("SpeedBoost Competence")]
-    [SerializeField] private int speedBoost;            // vitesse du joueur pendant son speedboost
-    [SerializeField] private float duration;            // duree du speedboost
-    [SerializeField] private float cooldown;            // duree du cooldown du speedboost
+    [SerializeField] private int speedBoost;
+    [SerializeField] private float duration;
+    [SerializeField] private float cooldown;
     [SerializeField] private bool isReady = true;
 
     [Header("Objects & Components")]
     public Rigidbody2D RB;
-    public GameObject Pivot;                            // pour l'attaque
+    public GameObject Pivot;
     private float angle;                                // variable pour definir l'angle de vue du joueur en fonction de la position de la souris ou du joystick
 
-    public void LookMouse(InputAction.CallbackContext context)          // orientation de la vue du personnage avec la souris
+    public void LookMouse(InputAction.CallbackContext context)
     {
 
         Vector2 mouse = context.ReadValue<Vector2>();
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void LookJoystick(InputAction.CallbackContext context)       // orientation de la vue du personnage avec le joystick
+    public void LookJoystick(InputAction.CallbackContext context)
     {
 
         Vector2 joystick = context.ReadValue<Vector2>();
@@ -45,14 +45,14 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void Movement(InputAction.CallbackContext value)             // mouvements du personnage
+    public void Movement(InputAction.CallbackContext value)
     {
         Vector2 inputMovement = value.ReadValue<Vector2>();
         inputMovement.Normalize();
         RB.velocity = new Vector2(speed * inputMovement.x, speed * inputMovement.y);
     }
 
-    public void Attack(InputAction.CallbackContext value)               // attaque
+    public void Attack(InputAction.CallbackContext value)
     {
         if (value.started)
         {
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Boost(InputAction.CallbackContext value)                // competence Boost
+    public void Boost(InputAction.CallbackContext value)
     {
         if (value.started)
         {

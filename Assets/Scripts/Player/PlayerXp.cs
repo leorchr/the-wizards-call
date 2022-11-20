@@ -48,7 +48,7 @@ public class PlayerXp : MonoBehaviour
         }
     }
 
-    private void DisplayStats()
+    private void DisplayStats()     // affiche des statistiques au dessus du joueur
     {
         levelUpInfo.text = $"Lvl {level} \n+{addLevelSpeed} Speed \n+{addLevelDamage} Damages";
         stats.SetActive(true);
