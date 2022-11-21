@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PlayerController : MonoBehaviour
@@ -20,7 +21,10 @@ public class PlayerController : MonoBehaviour
     [Header("Objects & Components")]
     public Rigidbody2D RB;
     public GameObject Pivot;
+    public GameObject Rotation;
+    public GameObject Stick;
     private float angle;                                // variable pour definir l'angle de vue du joueur en fonction de la position de la souris ou du joystick
+
 
     public void LookMouse(InputAction.CallbackContext context)
     {
@@ -29,7 +33,7 @@ public class PlayerController : MonoBehaviour
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.localPosition);
         Vector2 offset = new Vector2(mouse.x - screenPoint.x, mouse.y - screenPoint.y);
         angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg + 90;
-        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        Rotation.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
     }
 
@@ -40,7 +44,7 @@ public class PlayerController : MonoBehaviour
         angle = Mathf.Atan2(joystick.y, joystick.x) * Mathf.Rad2Deg;
         if (angle != 0)
         {
-            transform.rotation = Quaternion.Euler(0f, 0f, angle + 90);
+            Rotation.transform.rotation = Quaternion.Euler(0f, 0f, angle + 90);
         }
 
     }

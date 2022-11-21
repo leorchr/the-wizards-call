@@ -9,15 +9,15 @@ using static UnityEngine.GraphicsBuffer;
 public class Enemy : MonoBehaviour
 {
     [Header("Statistics")]
-    [SerializeField] private int hp;                    // nombre de pv de l'ennemi
-    [SerializeField] private int speed;                 // vitesse de l'ennemi
-    public int damage;                                  // nombre de degats infliges par l'epee
+    [SerializeField] private int hp;
+    [SerializeField] private int speed;
+    public int damage;
     public int xp;                                      // nombre d'xp que l'ennemi donne au joueur a sa mort
 
     [Header("Knockback")]
     [SerializeField] private int kbSpeed;               // vitesse a laquelle l'ennemi se deplace quand il est touche
-    [SerializeField] private int kbPlayerSpeed;         // vitesse de l'ennemis, du kb de l'ennemi et du joueur
-    [SerializeField] private float duration;            // vitesse et duree du kb
+    [SerializeField] private int kbPlayerSpeed;         // vitesse a laquelle le joueur se deplace quand il est touche
+    [SerializeField] private float duration;
     private bool kb = false;
 
     [Header("Aggro")]
@@ -68,15 +68,15 @@ public class Enemy : MonoBehaviour
 
     void Knockback()                                    // fonction qui fait reculer l'ennemi quand il est touché
     {
-        if (kb == true)                                 // deplace l'ennemi quand il est touche
+        if (kb == true)
         {
             rb.AddForce(transform.right * Time.deltaTime * -kbSpeed);
         }
     }
 
-    void PlayerContact()
+    void PlayerContact()     // deplace le personnage et l'ennemi quand ils se touchent
     {
-        if (contact == true)     // deplace le personnage et l'ennemi quand ils se touchent
+        if (contact == true)
         {
             rb.AddForce(transform.right * Time.deltaTime * -kbSpeed);
             playerRb.AddForce(transform.right * Time.deltaTime * kbPlayerSpeed);
@@ -96,7 +96,7 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Stick")
+        if (collision.gameObject.tag == "Stick")
         {
             TakeDamage(playerController.damage);
             StartCoroutine(KbDuration());
@@ -112,7 +112,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private IEnumerator KbDuration()                    // pour la duree du kb
+    private IEnumerator KbDuration()
     {
         kb = true;
         yield return new WaitForSeconds(duration);
@@ -120,7 +120,7 @@ public class Enemy : MonoBehaviour
         kb = false;
     }
 
-    private IEnumerator ContactDuration()               // pour la duree du contact
+    private IEnumerator ContactDuration()
     {
         contact = true;
         yield return new WaitForSeconds(duration);
