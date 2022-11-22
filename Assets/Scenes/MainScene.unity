@@ -403,7 +403,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2055070979}
+      - m_Target: {fileID: 2055070981}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
@@ -2308,12 +2308,12 @@ MonoBehaviour:
   enemyPrefab3: {fileID: 2784554390412413089, guid: a5883119934934c41886c6bacc263977,
     type: 3}
   player: {fileID: 1952476033}
-  nbEnemies1: 2
+  nbEnemies1: 1
   nbEnemies2: 0
   nbEnemies3: 0
   currentEnemies: 0
-  limitsX: {x: -8, y: 8}
-  limitsY: {x: -3.5, y: 3.5}
+  limitsX: {x: -9, y: 9}
+  limitsY: {x: -3.5, y: 4}
 --- !u!4 &348645086
 Transform:
   m_ObjectHideFlags: 0
@@ -13034,7 +13034,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2055070979}
+      - m_Target: {fileID: 2055070981}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -27520,8 +27520,8 @@ GameObject:
   - component: {fileID: 1952476038}
   - component: {fileID: 1952476037}
   - component: {fileID: 1952476036}
-  - component: {fileID: 1952476035}
   - component: {fileID: 1952476042}
+  - component: {fileID: 1952476043}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -27555,121 +27555,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6591605, y: 0.5980361}
   m_EdgeRadius: 0
---- !u!114 &1952476035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952476033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: c52692f5d0a8663498dcb919a4c69a0c,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1952476036}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: Movement
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 55f35af1-6445-4d0d-ae34-58ab5d482827
-    m_ActionName: PlayerControls/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1952476036}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: Attack
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 4b987310-d07a-45d6-a022-8fec6bbe92ac
-    m_ActionName: PlayerControls/Attack[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1952476036}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: Boost
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 9179966f-63d5-49d4-9d40-8ae037587342
-    m_ActionName: PlayerControls/Boost[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1952476036}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: LookMouse
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: cc366dc5-eb8e-4e83-b822-89aa83f4900e
-    m_ActionName: PlayerControls/Rotate[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1952476036}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: LookJoystick
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 5063f960-f194-4232-b568-cc23cd526399
-    m_ActionName: PlayerControls/Rotate2
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 523e6bc0-bb87-4d98-8498-142962a26843
-    m_ActionName: Menu/Pause[/Keyboard/escape]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: PlayerControls
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &1952476036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27727,8 +27612,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHp: 0
   maxHp: 50
-  invincibleDuration: 1
   invincible: 0
+  invincibleDuration: 1
   healthBar: {fileID: 870239853}
   endGame: {fileID: 2055070980}
 --- !u!50 &1952476039
@@ -27837,6 +27722,121 @@ MonoBehaviour:
   prefab: {fileID: 1607131435978619280, guid: 9a829b6e138ba3e4db5969f56c30c22d, type: 3}
   stats: {fileID: 0}
   playerXp: {fileID: 1952476037}
+--- !u!114 &1952476043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952476033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: c52692f5d0a8663498dcb919a4c69a0c,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1952476036}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Movement
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 55f35af1-6445-4d0d-ae34-58ab5d482827
+    m_ActionName: PlayerControls/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/DualSenseGamepadHID/leftStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1952476036}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4b987310-d07a-45d6-a022-8fec6bbe92ac
+    m_ActionName: PlayerControls/Attack[/Mouse/leftButton,/DualSenseGamepadHID/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1952476036}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Boost
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9179966f-63d5-49d4-9d40-8ae037587342
+    m_ActionName: PlayerControls/Boost[/Keyboard/e,/DualSenseGamepadHID/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1952476036}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: LookMouse
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cc366dc5-eb8e-4e83-b822-89aa83f4900e
+    m_ActionName: PlayerControls/RotateMouse[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1952476036}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: LookJoystick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5063f960-f194-4232-b568-cc23cd526399
+    m_ActionName: PlayerControls/RotateJoystick[/DualSenseGamepadHID/rightStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 523e6bc0-bb87-4d98-8498-142962a26843
+    m_ActionName: Menu/Pause[/Keyboard/escape,/DualSenseGamepadHID/start]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: PlayerControls
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &1957844579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28262,7 +28262,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2055070979}
+      - m_Target: {fileID: 2055070981}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
@@ -28412,10 +28412,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2055070977}
   - component: {fileID: 2055070976}
-  - component: {fileID: 2055070975}
   - component: {fileID: 2055070980}
-  - component: {fileID: 2055070979}
-  - component: {fileID: 2055070978}
+  - component: {fileID: 2055070981}
+  - component: {fileID: 2055070983}
+  - component: {fileID: 2055070984}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -28423,25 +28423,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2055070975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2055070974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &2055070976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28472,7 +28453,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2055070978
+--- !u!114 &2055070980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055070974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7324a40265e859343a985acf6d1a7f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverMenu: {fileID: 1284830632}
+  player: {fileID: 1952476033}
+  playerHealth: {fileID: 1952476038}
+  healthBar: {fileID: 870239853}
+--- !u!114 &2055070981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055070974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9cad560eb98c74489aabcf7bc00c650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 2037178146}
+  levelUpStats: {fileID: 1952476042}
+--- !u!114 &2055070983
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28487,7 +28498,7 @@ MonoBehaviour:
   m_Actions: {fileID: -944628639613478452, guid: c52692f5d0a8663498dcb919a4c69a0c,
     type: 3}
   m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
+  m_UIInputModule: {fileID: 2055070984}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -28520,7 +28531,7 @@ MonoBehaviour:
     m_ActionName: PlayerControls/RotateJoystick
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2055070979}
+      - m_Target: {fileID: 2055070981}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Pause
         m_Mode: 0
@@ -28532,42 +28543,43 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 523e6bc0-bb87-4d98-8498-142962a26843
-    m_ActionName: Menu/Pause[/Keyboard/escape]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+    m_ActionId: b4ce673c-5ca0-4568-acc7-f25c890fd2cc
+    m_ActionName: Menu/Pause[/Keyboard/escape,/DualSenseGamepadHID/start]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: KeyboardMouse
   m_DefaultActionMap: Menu
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2055070979
+--- !u!114 &2055070984
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055070974}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9cad560eb98c74489aabcf7bc00c650, type: 3}
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 2037178146}
---- !u!114 &2055070980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2055070974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7324a40265e859343a985acf6d1a7f6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOverMenu: {fileID: 1284830632}
-  player: {fileID: 1952476033}
-  playerHealth: {fileID: 1952476038}
-  healthBar: {fileID: 870239853}
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: c52692f5d0a8663498dcb919a4c69a0c,
+    type: 3}
+  m_PointAction: {fileID: 0}
+  m_MoveAction: {fileID: 0}
+  m_SubmitAction: {fileID: 0}
+  m_CancelAction: {fileID: 0}
+  m_LeftClickAction: {fileID: 0}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!4 &2067747564 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8848819282490232040, guid: 1dc4948f20ddc324f84c815af63aa6a9,

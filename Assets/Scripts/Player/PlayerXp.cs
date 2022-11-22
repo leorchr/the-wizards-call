@@ -5,11 +5,14 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 public class PlayerXp : MonoBehaviour
 {
+    [Header("Experience Statistics")]
     public int currentXp;
     public int maxXp;
     public int level;
+    [Header("Level Up Bonus")]
     public float addLevelSpeed;
     public int addLevelDamage;
+    [Header("Components")]
     [SerializeField] private XpBar xpBar;
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private PlayerController player;

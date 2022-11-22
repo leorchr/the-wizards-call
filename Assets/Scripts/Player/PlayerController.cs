@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float cooldown;
     [SerializeField] private bool isReady = true;
 
-    [Header("Objects & Components")]
+    [Header("Components")]
     public Rigidbody2D RB;
     public GameObject Pivot;
     public GameObject Rotation;
@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
 
     public void Movement(InputAction.CallbackContext value)
     {
+        Debug.Log("salut");
         Vector2 inputMovement = value.ReadValue<Vector2>();
         inputMovement.Normalize();
         RB.velocity = new Vector2(speed * inputMovement.x, speed * inputMovement.y);
@@ -59,7 +60,6 @@ public class PlayerController : MonoBehaviour
         if (value.started)
         {
             if (Time.timeScale == 0) return;
-
             Pivot.GetComponent<Animator>().SetTrigger("Attaque");
         }
     }
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         if (value.started)
         {
-            if (isReady == false)
+            if (!isReady)
             {
                 return;
             }

@@ -8,7 +8,7 @@ public class LevelUpStats : MonoBehaviour
     public Canvas statsCanvas;
     public Vector3 statsOffset;
     [SerializeField] private GameObject prefab;
-    [SerializeField] private GameObject stats;
+    public GameObject stats;
     private TextMeshProUGUI levelUpInfo;
     [SerializeField] private PlayerXp playerXp;
 

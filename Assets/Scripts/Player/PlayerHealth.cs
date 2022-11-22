@@ -1,14 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int currentHp, maxHp;
-    [SerializeField] private float invincibleDuration;
     public bool invincible = false;                                                    // si le joueur est en état d'invincibilité
+    [SerializeField] private float invincibleDuration;
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private EndGame endGame;
 
@@ -22,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            if (invincible == false)
+            if (!invincible)
             {
                 currentHp -= collision.gameObject.GetComponent<Enemy>().damage;        // enlève le nombre de degats de l'ennemi aux pv du joueur
                 healthBar.SetHealth();                                                 // ajuste la barre de vie

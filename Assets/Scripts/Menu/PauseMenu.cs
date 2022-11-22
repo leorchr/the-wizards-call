@@ -2,25 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public LevelUpStats levelUpStats;
+
     private void Start()
     {
+        Time.timeScale = 1;
         pauseMenu.SetActive(false);
     }
     public void Pause(InputAction.CallbackContext context)
     {
+        Debug.Log("pause");
         if (pauseMenu.activeSelf == true)
         {
-            pauseMenu.SetActive(false);
-            Time.timeScale = 1;
+            Resume();
         }
         else
         {
             pauseMenu.SetActive(true);
             Time.timeScale = 0;
+            levelUpStats.stats.SetActive(false);
         }
     }
 
@@ -31,7 +37,6 @@ public class PauseMenu : MonoBehaviour
     }
     public void Exit()
     {
-        Application.Quit();
-        Debug.Log("Close Game");
+        SceneManager.LoadScene("Menu");
     }
 }
