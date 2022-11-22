@@ -8,8 +8,10 @@ public class PlayerHealth : MonoBehaviour
 {
     public int currentHp, maxHp;
     [SerializeField] private float invincibleDuration;
-    private bool invincible = false;                                                    // si le joueur est en état d'invincibilité
+    public bool invincible = false;                                                    // si le joueur est en état d'invincibilité
     [SerializeField] private HealthBar healthBar;
+    [SerializeField] private EndGame endGame;
+
     void Start()
     {
         currentHp = maxHp;
@@ -35,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHp <= 0)
         {
             Debug.Log("Vous êtes mort !");
+            endGame.GameOver();
         }
     }
 

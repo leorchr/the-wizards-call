@@ -142,6 +142,6 @@ MonoBehaviour:
   damage: 20
   xp: 20
   kbSpeed: 50
-  kbPlayerSpeed: 15
+  kbPlayerSpeed: 7
   duration: 0.1
   aggroDistance: 5

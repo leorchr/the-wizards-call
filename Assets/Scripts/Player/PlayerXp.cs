@@ -13,19 +13,8 @@ public class PlayerXp : MonoBehaviour
     [SerializeField] private XpBar xpBar;
     [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private PlayerController player;
+    [SerializeField] private LevelUpStats levelUp;
 
-    public Canvas statsCanvas;
-    public Vector3 statsOffset;
-    [SerializeField] private GameObject prefab;
-    [SerializeField] private GameObject stats;
-    private TextMeshProUGUI levelUpInfo;
-
-    private void Start()
-    {
-        stats = Instantiate(prefab, statsCanvas.transform);
-        stats.SetActive(false);
-        levelUpInfo = stats.GetComponent<TextMeshProUGUI>();
-    }
 
     public void AddXp(int xp)       // ajoute de l'xp au joueur
     {
@@ -44,20 +33,7 @@ public class PlayerXp : MonoBehaviour
             player.speed += addLevelSpeed;
             player.damage += addLevelDamage;
             xpBar.SetLevel();
-            DisplayStats();
+            levelUp.DisplayStats();
         }
-    }
-
-    private void DisplayStats()     // affiche des statistiques au dessus du joueur
-    {
-        levelUpInfo.text = $"Lvl {level} \n+{addLevelSpeed} Speed \n+{addLevelDamage} Damage";
-        stats.SetActive(true);
-        stats.transform.localPosition = statsOffset;
-        StartCoroutine(Waiter());
-    }
-    private IEnumerator Waiter()
-    {
-        yield return new WaitForSeconds(3f);
-        stats.SetActive(false);
     }
 }

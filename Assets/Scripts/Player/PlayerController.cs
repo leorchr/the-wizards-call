@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
 
     public void LookMouse(InputAction.CallbackContext context)
     {
-
         Vector2 mouse = context.ReadValue<Vector2>();
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.localPosition);
         Vector2 offset = new Vector2(mouse.x - screenPoint.x, mouse.y - screenPoint.y);
@@ -39,7 +38,6 @@ public class PlayerController : MonoBehaviour
 
     public void LookJoystick(InputAction.CallbackContext context)
     {
-
         Vector2 joystick = context.ReadValue<Vector2>();
         angle = Mathf.Atan2(joystick.y, joystick.x) * Mathf.Rad2Deg;
         if (angle != 0)
@@ -60,6 +58,8 @@ public class PlayerController : MonoBehaviour
     {
         if (value.started)
         {
+            if (Time.timeScale == 0) return;
+
             Pivot.GetComponent<Animator>().SetTrigger("Attaque");
         }
     }

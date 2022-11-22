@@ -65,10 +65,6 @@ public class Spawner : MonoBehaviour
             {
                 y = y2;
             }
-
-            Debug.Log(x);
-            Debug.Log(x3);
-            Debug.Log(player.transform.position);
             Instantiate(enemy, new Vector2(x, y), Quaternion.identity);
         }
     }
