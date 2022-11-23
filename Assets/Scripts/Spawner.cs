@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -9,7 +10,11 @@ public class Spawner : MonoBehaviour
     [SerializeField] private int nbEnemies1, nbEnemies2, nbEnemies3;
     public int currentEnemies;
     [SerializeField] private Vector2 limitsX, limitsY;
-
+    [SerializeField] private bool isSpawning;
+    private float x, y;
+    [SerializeField] private GameObject particulePrefab;
+    private GameObject particule;
+    [SerializeField] private GameObject timePrefab;
 
     void Start()
     {
@@ -28,6 +33,7 @@ public class Spawner : MonoBehaviour
     {
         if (currentEnemies == 0)
         {
+            Instantiate(timePrefab);
             if (nbEnemies1 <= 2)
             {
                 nbEnemies1++;
@@ -54,7 +60,6 @@ public class Spawner : MonoBehaviour
     {
         for (int i = 0; i < nbEnemies; i++)                                     // Spawn des ennemis pas directement sur le joueur
         {
-            float x, y;
             if (player.transform.position.x - 2 < limitsX.x || player.transform.position.x + 2 > limitsX.y)
             {
                 x = Random.Range(limitsX.x, limitsX.y);
@@ -85,7 +90,15 @@ public class Spawner : MonoBehaviour
                     y = y2;
                 }
             }
-            Instantiate(enemy, new Vector2(x, y), Quaternion.identity);
+            particule = Instantiate(particulePrefab,new Vector3(x,y), particulePrefab.transform.rotation);
+            StartCoroutine(Waiter(enemy,particule,x,y));
         }
+    }
+
+    IEnumerator Waiter(GameObject enemy,GameObject particule, float x, float y)        // pause entre les vagues
+    {
+        yield return new WaitForSeconds(2f);
+        Instantiate(enemy, new Vector2(x, y), Quaternion.identity);
+        Destroy(particule);
     }
 }

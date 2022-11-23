@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public GameObject Pivot;
     public GameObject Rotation;
     public GameObject Stick;
+    public TimeScript timeScript;
     private float angle;                                // variable pour definir l'angle de vue du joueur en fonction de la position de la souris ou du joystick
 
 
@@ -89,5 +90,13 @@ public class PlayerController : MonoBehaviour
         isReady = true;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Time")
+        {
+            Destroy(collision.gameObject);
+            timeScript.AddTime();
+        }
+    }
 
 }
