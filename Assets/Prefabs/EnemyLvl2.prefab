@@ -138,10 +138,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 200
-  speed: 50
-  damage: 20
-  xp: 20
-  kbSpeed: 50
-  kbPlayerSpeed: 7
+  speed: 80
+  damage: 40
+  xp: 40
+  kbSpeed: 35
+  kbPlayerSpeed: 10
   duration: 0.1
-  aggroDistance: 5
+  aggroDistance: 7

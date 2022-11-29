@@ -144,4 +144,4 @@ MonoBehaviour:
   kbSpeed: 50
   kbPlayerSpeed: 7
   duration: 0.1
-  aggroDistance: 5
+  aggroDistance: 7

@@ -31,7 +31,7 @@ public class TimeScript : MonoBehaviour
 
     public void AddTime()
     {
-        currentTime += 10;
+        currentTime += 7;
         if (currentTime >= maxTime)
         {
             currentTime = maxTime;

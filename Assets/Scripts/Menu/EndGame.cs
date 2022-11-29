@@ -9,6 +9,7 @@ public class EndGame : MonoBehaviour
     public GameObject player;
     public PlayerHealth playerHealth;
     public HealthBar healthBar;
+    [SerializeField] private TimerTextDisplay timerTextDisplay;
 
     private void Start()
     {
@@ -17,17 +18,20 @@ public class EndGame : MonoBehaviour
 
     public void GameOver()
     {
-            gameOverMenu.SetActive(true);
-            Time.timeScale = 0;
+        gameOverMenu.SetActive(true);
+        timerTextDisplay.TimeSurvivedText();
+        Time.timeScale = 0;
     }
 
     public void Retry()
     {
-        player.transform.position = Vector3.zero;
+        /*player.transform.position = Vector3.zero;
         Time.timeScale = 1;
         playerHealth.invincible = true;
         playerHealth.currentHp = playerHealth.maxHp;
         healthBar.SetHealth();
-        gameOverMenu.SetActive(false);
+        gameOverMenu.SetActive(falseç);*/
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }

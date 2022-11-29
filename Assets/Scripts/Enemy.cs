@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 {
     [Header("Statistics")]
     [SerializeField] private int hp;
-    [SerializeField] private int speed;
+    public float speed;
     public int damage;
     public int xp;                                      // nombre d'xp que l'ennemi donne au joueur a sa mort
 

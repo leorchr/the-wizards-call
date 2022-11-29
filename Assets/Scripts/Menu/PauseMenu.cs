@@ -17,7 +17,6 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause(InputAction.CallbackContext context)
     {
-        Debug.Log("pause");
         if (pauseMenu.activeSelf == true)
         {
             Resume();
@@ -38,5 +37,6 @@ public class PauseMenu : MonoBehaviour
     public void Exit()
     {
         SceneManager.LoadScene("Menu");
+        Time.timeScale = 1;
     }
 }

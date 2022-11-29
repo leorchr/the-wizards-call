@@ -50,7 +50,6 @@ public class PlayerController : MonoBehaviour
 
     public void Movement(InputAction.CallbackContext value)
     {
-        Debug.Log("salut");
         Vector2 inputMovement = value.ReadValue<Vector2>();
         inputMovement.Normalize();
         RB.velocity = new Vector2(speed * inputMovement.x, speed * inputMovement.y);

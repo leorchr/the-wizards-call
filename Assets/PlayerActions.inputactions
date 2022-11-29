@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "e565c56f-e2ab-42eb-8d1e-495a20f25b0d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -238,27 +247,10 @@
                     "action": "RotateJoystick",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Menu",
-            "id": "9626df7c-c6a2-4352-8096-f2d6c8de5083",
-            "actions": [
-                {
-                    "name": "Pause",
-                    "type": "Button",
-                    "id": "b4ce673c-5ca0-4568-acc7-f25c890fd2cc",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
+                },
                 {
                     "name": "",
-                    "id": "f381112b-3660-4361-871e-43c06b789d2a",
+                    "id": "31727096-b48b-489b-9570-22e45e4ed04b",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
@@ -269,7 +261,7 @@
                 },
                 {
                     "name": "",
-                    "id": "6ac557d9-7b2c-4cba-9bc4-94dd5a4d59e1",
+                    "id": "4523ff0e-18cb-41fa-bdc7-3a46e06729f5",
                     "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",

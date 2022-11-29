@@ -31,7 +31,7 @@ public class PlayerXp : MonoBehaviour
         {
             level++;
             currentXp -= maxXp;
-            maxXp += 20;
+            maxXp += 10;
             playerHealth.AddHp();
             player.speed += addLevelSpeed;
             player.damage += addLevelDamage;

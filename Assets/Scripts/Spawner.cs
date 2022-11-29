@@ -15,6 +15,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject particulePrefab;
     private GameObject particule;
     [SerializeField] private GameObject timePrefab;
+    [SerializeField] private Enemy enemy;
 
     void Start()
     {
@@ -34,25 +35,45 @@ public class Spawner : MonoBehaviour
         if (currentEnemies == 0)
         {
             Instantiate(timePrefab);
-            if (nbEnemies1 <= 2)
+            if (nbEnemies3 == 0)
             {
-                nbEnemies1++;
+                if (nbEnemies1 <= 2)
+                {
+                    nbEnemies1++;
+                }
+                else if (nbEnemies2 <= 2 && nbEnemies1 == 3)
+                {
+                    nbEnemies1 = 0;
+                    nbEnemies2++;
+                }
+                if (nbEnemies2 == 3)
+                {
+                    nbEnemies2 = 0;
+                    nbEnemies3++;
+                }
             }
-            else if (nbEnemies2 <= 2 && nbEnemies1 == 3)
+            else
             {
-                nbEnemies1 = 0;
-                nbEnemies2++;
+                if (nbEnemies1 <= 4)
+                {
+                    nbEnemies1 += 2;
+                }
+                else if (nbEnemies2 <= 4 && nbEnemies1 >= 6)
+                {
+                    nbEnemies1 = 1;
+                    nbEnemies2 +=2;
+                }
+                if (nbEnemies2 >= 3)
+                {
+                    nbEnemies2 = 1;
+                    nbEnemies3++;
+                }
             }
-            if (nbEnemies2 == 3)
-            {
-                nbEnemies2 = 0;
-                nbEnemies3++;
-            }
+                
             currentEnemies = nbEnemies1 + nbEnemies2 + nbEnemies3;
             Spawn(enemyPrefab1, nbEnemies1);
             Spawn(enemyPrefab2, nbEnemies2);
             Spawn(enemyPrefab3, nbEnemies3);
-
         }
     }
 
@@ -97,7 +118,7 @@ public class Spawner : MonoBehaviour
 
     IEnumerator Waiter(GameObject enemy,GameObject particule, float x, float y)        // pause entre les vagues
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         Instantiate(enemy, new Vector2(x, y), Quaternion.identity);
         Destroy(particule);
     }
