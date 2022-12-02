@@ -33,6 +33,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (currentHp <= 0)
         {
+            currentHp = 0;
+            healthBar.SetHealth();
             Debug.Log("Vous êtes mort !");
             endGame.GameOver();
         }

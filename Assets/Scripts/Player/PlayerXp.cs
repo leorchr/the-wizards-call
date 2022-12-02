@@ -29,14 +29,28 @@ public class PlayerXp : MonoBehaviour
     {
         if (currentXp >= maxXp)
         {
-            level++;
-            currentXp -= maxXp;
-            maxXp += 10;
-            playerHealth.AddHp();
-            player.speed += addLevelSpeed;
-            player.damage += addLevelDamage;
-            xpBar.SetLevel();
-            levelUp.DisplayStats();
+            if (level < 10)
+            {
+                level++;
+                currentXp -= maxXp;
+                maxXp += 10;
+                playerHealth.AddHp();
+                player.speed += addLevelSpeed;
+                player.damage += addLevelDamage;
+                xpBar.SetLevel();
+                levelUp.DisplayStats();
+            }
+            else
+            {
+                level++;
+                currentXp -= maxXp;
+                maxXp += 100;
+                playerHealth.AddHp();
+                player.speed += addLevelSpeed;
+                player.damage += addLevelDamage;
+                xpBar.SetLevel();
+                levelUp.DisplayStats();
+            }
         }
     }
 }

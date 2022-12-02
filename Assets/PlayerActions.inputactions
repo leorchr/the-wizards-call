@@ -208,7 +208,7 @@
                     "name": "",
                     "id": "e044e3db-9804-45ad-bc8b-d8b0cd60943e",
                     "path": "<Keyboard>/e",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Boost",

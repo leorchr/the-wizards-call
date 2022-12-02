@@ -8,7 +8,10 @@ public class TimerTextDisplay : MonoBehaviour
 {
     public float timer;
     public TextMeshProUGUI timerText;
+    public TextMeshProUGUI timerTextInGame;
     public string timePassed;
+    private int minutes;
+    private int seconds;
 
 
     // Start is called before the first frame update
@@ -22,22 +25,24 @@ public class TimerTextDisplay : MonoBehaviour
     void Update()
     {
         timer += 1 * Time.deltaTime;
+        minutes = Mathf.FloorToInt(timer / 60f);
+        seconds = Mathf.FloorToInt(timer-minutes * 60);
+        timerTextInGame.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     public void TimeSurvivedText()
     {
-        Debug.Log("bonjour");
-        timePassed = string.Format("{0:0}m : {1:00}s", Time.timeSinceLevelLoad / 60, Time.timeSinceLevelLoad % 60);
+        timePassed = string.Format("{0:00}:{1:00}", minutes, seconds);
         timerText.text = $"\nYou survived {timePassed}";
         if (timer < 60)
         {
             timerText.text += "\nBad performance";
         }
-        else if (timer > 60)
+        else if (timer > 60 && timer < 120)
         {
             timerText.text += "\nInteresting !";
         }
-        else if (timer > 60)
+        else if (timer >= 120)
         {
             timerText.text += "\nWell played";
         }

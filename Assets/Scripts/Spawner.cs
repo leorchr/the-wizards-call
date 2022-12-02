@@ -12,10 +12,11 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Vector2 limitsX, limitsY;
     [SerializeField] private bool isSpawning;
     private float x, y;
-    [SerializeField] private GameObject particulePrefab;
+    [SerializeField] private GameObject particulePrefab1;
+    [SerializeField] private GameObject particulePrefab2;
+    [SerializeField] private GameObject particulePrefab3;
     private GameObject particule;
     [SerializeField] private GameObject timePrefab;
-    [SerializeField] private Enemy enemy;
 
     void Start()
     {
@@ -23,6 +24,8 @@ public class Spawner : MonoBehaviour
         Spawn(enemyPrefab1, nbEnemies1);
         Spawn(enemyPrefab2, nbEnemies2);
         Spawn(enemyPrefab3, nbEnemies3);
+        ParticleSystem ps = GetComponent<ParticleSystem>();
+        ParticleSystem.MainModule psmain = ps.main;
     }
 
     private void Update()
@@ -111,8 +114,26 @@ public class Spawner : MonoBehaviour
                     y = y2;
                 }
             }
-            particule = Instantiate(particulePrefab,new Vector3(x,y), particulePrefab.transform.rotation);
-            StartCoroutine(Waiter(enemy,particule,x,y));
+            ParticuleColor(enemy);
+        }
+    }
+
+    private void ParticuleColor(GameObject enemy)
+    {
+        if (enemy == enemyPrefab1)
+        {
+            particule = Instantiate(particulePrefab1, new Vector3(x, y), particulePrefab1.transform.rotation);
+            StartCoroutine(Waiter(enemy, particule, x, y));
+        }
+        else if (enemy == enemyPrefab2)
+        {
+            particule = Instantiate(particulePrefab2, new Vector3(x, y), particulePrefab2.transform.rotation);
+            StartCoroutine(Waiter(enemy, particule, x, y));
+        }
+        else
+        {
+            particule = Instantiate(particulePrefab3, new Vector3(x, y), particulePrefab3.transform.rotation);
+            StartCoroutine(Waiter(enemy, particule, x, y));
         }
     }
 

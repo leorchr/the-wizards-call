@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void LookJoystick(InputAction.CallbackContext context)
+    public void LookJoystick(InputAction.CallbackContext context)       // si ajout de controles pour manette
     {
         Vector2 joystick = context.ReadValue<Vector2>();
         angle = Mathf.Atan2(joystick.y, joystick.x) * Mathf.Rad2Deg;
@@ -68,14 +68,14 @@ public class PlayerController : MonoBehaviour
     {
         if (value.started)
         {
-            if (!isReady)
-            {
-                return;
-            }
-            else
+            if (isReady)
             {
                 isReady = false;
                 StartCoroutine(Cooldown());
+            }
+            else
+            {
+                return;
             }
         }
     }

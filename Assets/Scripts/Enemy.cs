@@ -1,10 +1,5 @@
-using Newtonsoft.Json.Linq;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
-using static UnityEngine.GraphicsBuffer;
 
 public class Enemy : MonoBehaviour
 {
@@ -27,6 +22,7 @@ public class Enemy : MonoBehaviour
     private bool contact = false;                       // verifie s'il y a eu un contact avec le joueur
     private Rigidbody2D rb;
     private Spawner spawner;
+    private Audio _audio;
 
     // Player Components
 
@@ -43,6 +39,7 @@ public class Enemy : MonoBehaviour
         playerXp = player.GetComponent<PlayerXp>();
         playerController = player.GetComponent<PlayerController>();
         spawner = GameObject.Find("Spawner").GetComponent<Spawner>();
+        _audio = GameObject.Find("Audio Source").GetComponent<Audio>();
     }
 
     void FixedUpdate()
@@ -88,6 +85,7 @@ public class Enemy : MonoBehaviour
         hp -= damage;
         if (hp <= 0)
         {
+            _audio.DeathSound();
             Destroy(gameObject);
             spawner.currentEnemies--;
             playerXp.AddXp(xp);
