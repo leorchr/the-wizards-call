@@ -1,6 +1,6 @@
 # The Wizard's Call
 
-**In our world, the "Wizard" is not an ordinary being. He is the last bastion of humanity, the only one able to defend the human race from the attacks of the demonic forces: “The Cute Creatures”. The Wizard must protect the humans and defeat the enemies.**
+In our world, the "Wizard" is not an ordinary being. He is the last bastion of humanity, the only one able to defend the human race from the attacks of the demonic forces: “The Cute Creatures”. The Wizard must protect the humans and defeat the enemies.
 
 ## 🎮 Features
 - **Top-down gameplay**: Navigate the battlefield from a bird's eye view.
